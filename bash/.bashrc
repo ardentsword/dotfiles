@@ -2,6 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -19,6 +20,7 @@ shopt -s histappend
 HISTSIZE=10000
 HISTFILESIZE=20000
 
+#bla
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -59,6 +61,8 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+source ~/.git-prompt
+
 # ANSI color codes
 RS="\[\033[0m\]"    # reset
 HC="\[\033[1m\]"    # hicolor
@@ -84,7 +88,14 @@ BWHT="\[\033[47m\]" # background white
 if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     #PS1="\[\033[01;37m\]\$? \$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi) $(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$\[\033[00m\] "
-    PS1="$HC$FMAG[ $FGRN${debian_chroot:+($debian_chroot)}\u$FYEL@$FGRN\h$FYEL: $FBLE\w $FMAG]$FYEL\\$ $RS"
+    PS1FRONT="$HC$FMAG[ $FGRN${debian_chroot:+($debian_chroot)}\u$FYEL@$FGRN\h$FYEL: $FBLE\w"
+    PS1BACK=" $FMAG]$FYEL\\$ $RS"
+    
+    #PS1=$PS1FRONT$PS1BACK
+    
+    # git in bash
+    PROMPT_COMMAND='__git_ps1 "'$PS1FRONT'" "'$PS1BACK'";'
+    unset PS1FRONT PS1BACK
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     PS2="&gt; "
