@@ -125,7 +125,7 @@
 #          `git-rev-list`
 # git    | _Default_. Always compares `HEAD` to `@{upstream}`
 # svn    | Always compares `HEAD` to `SVN` upstream
-__git_ps1 ()
+__git_ps1_new ()
 {
     if [ "$(git config --bool bash.enableGitStatus)" == "false" ]; then return; fi
 
