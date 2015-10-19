@@ -86,12 +86,8 @@ BCYN="\[\033[46m\]" # background cyan
 BWHT="\[\033[47m\]" # background white
 
 if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    #PS1="\[\033[01;37m\]\$? \$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi) $(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$\[\033[00m\] "
-
     PS1FRONT="$HC$FMAG[ $FGRN${debian_chroot:+($debian_chroot)}\u$FYEL@$FGRN\h$FYEL: $FBLE\w"
     PS1BACK=" $FMAG]$FYEL\\$ $RS"
-    #PS1="$PS1FRONT\$(__git_ps1_new)$PS1BACK"
     
     # git in bash
     PROMPT_COMMAND='__git_ps1_new "'$PS1FRONT'" "'$PS1BACK'";'
