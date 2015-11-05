@@ -1,28 +1,36 @@
-#C Find all folders
+#C = custom (this whole files is custom)
+
+# Some more ls aliases
+alias ll='ls -alFh'
+alias la='ls -A'
+alias l='ls -CF'
+alias l.='ls -d .* --color=auto'
+
+# Find all folders
 alias lsf="ls -alF | grep /$"
 
-#C This is GOLD for finding out what is taking so much space on your drives!
+# This is GOLD for finding out what is taking so much space on your drives!
 alias diskspace="du -Sh | sort -n -r |more"
 
-#C Command line mplayer movie watching for the win.
+# Command line mplayer movie watching for the win.
 #alias mp="mplayer -fs"
 
-#C Show me the size (sorted) of only the folders in this directory
+# Show me the size (sorted) of only the folders in this directory
 alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
 
-#C Easy move up directories
+# Easy move up directories
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-#C Make previous command sudo
+# Make previous command sudo
 alias s='sudo "$BASH" -c "$(history -p !!)"'
 
-#C Rm wil now prompt for deletion and show output
+# Rm wil now prompt for deletion and show output
 alias rm="rm -v"
 
-#C easy archive extract
+# easy archive extract
 extract () {
    if [ -f $1 ] ; then
        case $1 in
@@ -44,5 +52,22 @@ extract () {
    fi
  }
  
-#C Create dir and cd into it
+# Create dir and cd into it
 function md () { mkdir -pv "$@" && cd "$@"; }
+
+# easy apt-get 
+alias apt-get='sudo apt-get'
+
+# Calculator
+alias calc='bc -l'
+
+# Show all open ports
+alias ports='netstat -tulanp'
+
+# Show memory usage
+alias meminfo='free -m -l -t'
+
+# Aliases for showing used harddisk space/files
+alias df='df -H'
+alias du='du -ch'
+alias du1='du -ch -d 1'
