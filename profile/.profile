@@ -8,9 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# set TERM to xterm-color to allow colors in the terminal
-TERM=xterm-color
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
