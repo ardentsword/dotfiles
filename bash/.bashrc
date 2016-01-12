@@ -48,7 +48,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -92,7 +92,7 @@ if [ "$color_prompt" = yes ]; then
     # git in bash
     PROMPT_COMMAND='__git_ps1_new "'$PS1FRONT'" "'$PS1BACK'";'
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1="$RS${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "
     PS2="&gt; "
 fi
 unset color_prompt force_color_prompt
