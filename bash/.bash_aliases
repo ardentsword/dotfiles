@@ -71,3 +71,6 @@ alias meminfo='free -m -l -t'
 alias df='df -H'
 alias du='du -ch'
 alias du1='du -ch -d 1'
+
+# Show all disks, partitions with sizes
+alias lds='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
