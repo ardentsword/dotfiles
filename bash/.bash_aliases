@@ -1,8 +1,8 @@
 #C = custom (this whole files is custom)
 
 # Some more ls aliases
-alias ll='ls -alFh'
-alias la='ls -A'
+alias ll='ls -lFh'
+alias la='ls -AlFh'
 alias l='ls -CF'
 alias l.='ls -d .* --color=auto'
 
