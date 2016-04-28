@@ -90,7 +90,7 @@ if [ "$color_prompt" = yes ]; then
     # PS1FRONT="$HC$FMAG[ $FGRN${debian_chroot:+($debian_chroot)}\u$FYEL@$FGRN\h$FYEL: $FBLE\w" #
     # PS1FRONT="$FMAG[ $FGRN\u$FYEL@$FGRN\h$FYEL"
     # PS1FRONT="$FMAG[ $FBLK$BGRN$FBLK \u $FGRN$BBLK$FBLK$BYEL$FBLK \h $FYEL$BBLK$FBLK$BBLE$FBLK \w $FBLE$BBLK "
-    if [ "$PUTTY_FONT" = "inputmono" ]; then
+    if [ "$LC_PUTTY_FONT" = "powerline" ]; then
         PS1FRONT=" $FBLK$BGRN$FBLK \h $FGRN$BYEL$FBLK \u $FYEL$BBLE$FBLK \w $BBLK"
         PS1BACK="$FBLE$BBLK $RS"
     else
