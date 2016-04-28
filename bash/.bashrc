@@ -67,27 +67,36 @@ fi
 RS="\[\033[0m\]"    # reset
 HC="\[\033[1m\]"    # hicolor
 UL="\[\033[4m\]"    # underline
+TEST="\[\033[50m\]" # test
 INV="\[\033[7m\]"   # inverse background and foreground
 FBLK="\[\033[30m\]" # foreground black
-FRED="\[\033[31m\]" # foreground red
-FGRN="\[\033[32m\]" # foreground green
-FYEL="\[\033[33m\]" # foreground yellow
-FBLE="\[\033[34m\]" # foreground blue
-FMAG="\[\033[35m\]" # foreground magenta
-FCYN="\[\033[36m\]" # foreground cyan
-FWHT="\[\033[37m\]" # foreground white
+FRED="\[\033[91m\]" # foreground red
+FGRN="\[\033[92m\]" # foreground green
+FYEL="\[\033[93m\]" # foreground yellow
+FBLE="\[\033[94m\]" # foreground blue
+FMAG="\[\033[95m\]" # foreground magenta
+FCYN="\[\033[96m\]" # foreground cyan
+FWHT="\[\033[97m\]" # foreground white
 BBLK="\[\033[40m\]" # background black
-BRED="\[\033[41m\]" # background red
-BGRN="\[\033[42m\]" # background green
-BYEL="\[\033[43m\]" # background yellow
-BBLE="\[\033[44m\]" # background blue
-BMAG="\[\033[45m\]" # background magenta
-BCYN="\[\033[46m\]" # background cyan
-BWHT="\[\033[47m\]" # background white
+BRED="\[\033[101m\]" # background red
+BGRN="\[\033[102m\]" # background green
+BYEL="\[\033[103m\]" # background yellow
+BBLE="\[\033[104m\]" # background blue
+BMAG="\[\033[105m\]" # background magenta
+BCYN="\[\033[106m\]" # background cyan
+BWHT="\[\033[107m\]" # background white
 
 if [ "$color_prompt" = yes ]; then
-    PS1FRONT="$HC$FMAG[ $FGRN${debian_chroot:+($debian_chroot)}\u$FYEL@$FGRN\h$FYEL: $FBLE\w"
-    PS1BACK=" $FMAG]$FYEL\\$ $RS"
+    # PS1FRONT="$HC$FMAG[ $FGRN${debian_chroot:+($debian_chroot)}\u$FYEL@$FGRN\h$FYEL: $FBLE\w" #
+    # PS1FRONT="$FMAG[ $FGRN\u$FYEL@$FGRN\h$FYEL"
+    # PS1FRONT="$FMAG[ $FBLK$BGRN$FBLK \u $FGRN$BBLK$FBLK$BYEL$FBLK \h $FYEL$BBLK$FBLK$BBLE$FBLK \w $FBLE$BBLK "
+    if [ "$PUTTY_FONT" = "inputmono" ]; then
+        PS1FRONT=" $FBLK$BGRN$FBLK \h $FGRN$BYEL$FBLK \u $FYEL$BBLE$FBLK \w $BBLK"
+        PS1BACK="$FBLE$BBLK $RS"
+    else
+        PS1FRONT="$HC$FMAG[ $FGRN${debian_chroot:+($debian_chroot)}\u$FYEL@$FGRN\h$FYEL: $FBLE\w"
+        PS1BACK=" $FMAG]$FYEL\\$ $RS"
+    fi
     
     # git in bash
     PROMPT_COMMAND='__git_ps1_new "'$PS1FRONT'" "'$PS1BACK'";'
