@@ -32,9 +32,6 @@ shopt -s cmdhist
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
-# Add ~/bin to path variable
-export PATH=$PATH:$HOME/bin
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
