@@ -70,7 +70,7 @@ alias meminfo='free -m -l -t'
 # Aliases for showing used harddisk space/files
 alias df='df -H'
 alias du='du -ch'
-alias du1='du -ch -d 1'
+alias du1='du -ch -d 1 | sort -rh'
 
 # Show all disks, partitions with sizes
 alias lds='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
