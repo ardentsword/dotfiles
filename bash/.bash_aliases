@@ -9,14 +9,8 @@ alias l.='ls -d .* --color=auto'
 # Find all folders
 alias lsf="ls -alF | grep /$"
 
-# This is GOLD for finding out what is taking so much space on your drives!
-alias diskspace="du -Sh | sort -n -r |more"
-
 # Command line mplayer movie watching for the win.
 #alias mp="mplayer -fs"
-
-# Show me the size (sorted) of only the folders in this directory
-alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
 
 # Easy move up directories
 alias ..="cd .."
@@ -71,6 +65,12 @@ alias meminfo='free -m -l -t'
 alias df='df -H'
 alias du='du -ch'
 alias du1='du -ch -d 1 | sort -rh'
+
+# This is GOLD for finding out what is taking so much space on your drives!
+alias diskspace="du -Sh | sort -rh |more"
+
+# Show me the size (sorted) of only the folders in this directory
+alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
 
 # Show all disks, partitions with sizes
 alias lds='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
