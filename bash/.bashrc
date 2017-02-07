@@ -86,12 +86,19 @@ BMAG="\[\033[105m\]" # background magenta
 BCYN="\[\033[106m\]" # background cyan
 BWHT="\[\033[107m\]" # background white
 
+# Determine active Python virtualenv details.
+if test -z "$VIRTUAL_ENV" ; then
+    PYTHON_VIRTUALENV=""
+else
+    PYTHON_VIRTUALENV="${BLUE}[`basename \"$VIRTUAL_ENV\"`]${COLOR_NONE} "
+fi
+
 if [ "$color_prompt" = yes ]; then
     # PS1FRONT="$HC$FMAG[ $FGRN${debian_chroot:+($debian_chroot)}\u$FYEL@$FGRN\h$FYEL: $FBLE\w" #
     # PS1FRONT="$FMAG[ $FGRN\u$FYEL@$FGRN\h$FYEL"
     # PS1FRONT="$FMAG[ $FBLK$BGRN$FBLK \u $FGRN$BBLK$FBLK$BYEL$FBLK \h $FYEL$BBLK$FBLK$BBLE$FBLK \w $FBLE$BBLK "
     if [ "$LC_PUTTY_FONT" = "powerline" ]; then
-        PS1FRONT=" $FBLK$BGRN$FBLK \h $FGRN$BYEL$FBLK \u $FYEL$BBLE$FBLK \w $BBLK"
+        PS1FRONT="$FBLK$BGRN$FBLK \h $FGRN$BYEL$FBLK \u $FYEL$BBLE$FBLK ${PYTHON_VIRTUALENV}\w $BBLK"
         PS1BACK="$FBLE$BBLK $RS"
     else
         PS1FRONT="$HC$FMAG[ $FGRN${debian_chroot:+($debian_chroot)}\u$FYEL@$FGRN\h$FYEL: $FBLE\w"
