@@ -8,3 +8,4 @@ stow -nv $1 2>&1 \
     #rm -f ../$i
 done
 stow $1
+
