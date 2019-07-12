@@ -117,9 +117,10 @@ unset color_prompt force_color_prompt
 
 echo ""
 echo -ne "\033[32m""Hello, $USER. today is "; date
-echo -e "\033[37m"; cal -3 ;
-echo -ne "\033[36m";
-echo -ne "\033[35m""Sysinfo:";uptime ;echo ""
+#echo -e "\033[37m"; cal -3 ;
+#echo -ne "\033[36m";
+echo -ne "\033[35m""Sysinfo:";uptime ;
+echo -e "\033[37m";
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
