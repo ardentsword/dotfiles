@@ -74,3 +74,12 @@ alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
 
 # Show all disks, partitions with sizes
 alias lds='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
+
+alias ltd='docker exec -it lt-dev /bin/bash'
+alias lt-dd-cms='lt-dd project:execute -p mpm-cms -n -- '
+alias lt-dd-web='lt-dd project:execute -p mpm-website -n -- '
+alias lt-dd-w2='lt-dd project:execute -p wrqr2 -n -- '
+alias gcp='git cherry-pick'
+alias fm='xinput set-prop 9 "libinput Scroll Method Enabled" 0, 0, 1 && xinput set-prop 9 "libinput Button Scrolling Button" 10'
+
+alias gdq='screen -d -m streamlink https://www.twitch.tv/gamesdonequick best -p mpv'

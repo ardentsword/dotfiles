@@ -11,16 +11,16 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+#HISTCONTROL=ignoreboth
+HISTCONTROL=erasedups
 
 # append to the history file, don't overwrite it
-shopt -s histappend
+#shopt -s histappend
 
 #C for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000
 HISTFILESIZE=20000
 
-#bla
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -97,7 +97,7 @@ if [ "$color_prompt" = yes ]; then
     # PS1FRONT="$HC$FMAG[ $FGRN${debian_chroot:+($debian_chroot)}\u$FYEL@$FGRN\h$FYEL: $FBLE\w" #
     # PS1FRONT="$FMAG[ $FGRN\u$FYEL@$FGRN\h$FYEL"
     # PS1FRONT="$FMAG[ $FBLK$BGRN$FBLK \u $FGRN$BBLK$FBLK$BYEL$FBLK \h $FYEL$BBLK$FBLK$BBLE$FBLK \w $FBLE$BBLK "
-    if [ "$LC_PUTTY_FONT" = "powerline" ]; then
+    if [ "$LC_PUTTY_FONT" = "powerline" ] || [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
         PS1FRONT="$FBLK$BGRN$FBLK \h $FGRN$BYEL$FBLK \u $FYEL$BBLE$FBLK ${PYTHON_VIRTUALENV}\w $BBLK"
         PS1BACK="$FBLE$BBLK $RS"
     else
@@ -170,3 +170,22 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export PATH="$HOME/LetsTalk/projects/devdocker/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+KUBECONFIG=""
+for kubeconfig in $HOME/.kube/config*; do
+    if [ -z $KUBECONFIG ]
+    then
+        KUBECONFIG=$kubeconfig
+    else
+        KUBECONFIG=$KUBECONFIG:$kubeconfig
+    fi
+done
+export KUBECONFIG
+
+
+
+#kubectx and kubens
+export PATH=~/.kubectx:$PATH
