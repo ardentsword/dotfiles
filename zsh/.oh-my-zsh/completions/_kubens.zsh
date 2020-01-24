@@ -1,0 +1,1 @@
+/home/tim/.kubectx/completion/kubens.zsh
