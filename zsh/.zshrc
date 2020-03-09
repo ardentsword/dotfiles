@@ -127,3 +127,21 @@ export PATH="$HOME/bin:$PATH"
 
 # Autocomplete kubectx/kubens
 autoload -U compinit && compinit
+
+# Go
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export EDITOR="code --wait"
+
+# Kube
+KUBECONFIG=""
+for kubeconfig in $HOME/.kube/config*; do
+    if [ -z $KUBECONFIG ]
+    then
+        KUBECONFIG=$kubeconfig
+    else
+        KUBECONFIG=$KUBECONFIG:$kubeconfig
+    fi
+done
+export KUBECONFIG
+if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
