@@ -146,7 +146,8 @@ done
 export KUBECONFIG
 if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 
-alias ltd='docker exec -it lt-dev /bin/bash'
+alias ltd='docker exec -it lt-dev sudo -Hu www-data /bin/bash'
+alias ltdr='docker exec -it lt-dev /bin/bash'
 alias ltdf='docker exec -it lt-dev-2004 /bin/bash'
 alias lt-dd-f='docker exec -it lt-dev-2004 lt-dd'
 alias lt-dd-cms='lt-dd project:execute -p mpm-cms -n -- '
