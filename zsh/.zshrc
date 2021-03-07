@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/tim/.oh-my-zsh"
+export ZSH="/home/ardent/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -75,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -130,29 +130,30 @@ autoload -U compinit && compinit
 
 # Go
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/snap/bin
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/snap/bin:$HOME/.composer/vendor/bin
 export EDITOR="code --wait"
 
 # Kube
-KUBECONFIG=""
-for kubeconfig in $HOME/.kube/config*; do
-    if [ -z $KUBECONFIG ]
-    then
-        KUBECONFIG=$kubeconfig
-    else
-        KUBECONFIG=$KUBECONFIG:$kubeconfig
-    fi
-done
-export KUBECONFIG
-if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
+#KUBECONFIG=""
+#for kubeconfig in $HOME/.kube/config*; do
+#    if [ -z $KUBECONFIG ]
+#    then
+#        KUBECONFIG=$kubeconfig
+#    else
+#        KUBECONFIG=$KUBECONFIG:$kubeconfig
+#    fi
+#done
+#export KUBECONFIG
+#if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 
-alias ltd='docker exec -it lt-dev /bin/bash'
-alias ltdf='docker exec -it lt-dev-2004 /bin/bash'
-alias lt-dd-f='docker exec -it lt-dev-2004 lt-dd'
-alias lt-dd-cms='lt-dd project:execute -p mpm-cms -n -- '
-alias lt-dd-web='lt-dd project:execute -p mpm-website -n -- '
-alias lt-dd-w2='lt-dd project:execute -p wrqr2 -n -- '
+#alias ltd='docker exec -it lt-dev /bin/bash'
+#alias ltdf='docker exec -it lt-dev-2004 /bin/bash'
+#alias lt-dd-f='docker exec -it lt-dev-2004 lt-dd'
+#alias lt-dd-cms='lt-dd project:execute -p mpm-cms -n -- '
+#alias lt-dd-web='lt-dd project:execute -p mpm-website -n -- '
+#alias lt-dd-w2='lt-dd project:execute -p wrqr2 -n -- '
+#alias fm='xinput set-prop 9 "libinput Scroll Method Enabled" 0, 0, 1 && xinput set-prop 9 "libinput Button Scrolling Button" 10'
+
 alias gcp='git cherry-pick'
-alias fm='xinput set-prop 9 "libinput Scroll Method Enabled" 0, 0, 1 && xinput set-prop 9 "libinput Button Scrolling Button" 10'
-
 alias gdq='screen -d -m streamlink https://www.twitch.tv/gamesdonequick best -p mpv'
+alias f=z
