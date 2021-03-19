@@ -38,12 +38,14 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     os_icon                 # os identifier
+    time
     dir                     # current directory
     vcs                     # git status
     # =========================[ Line #2 ]=========================
     newline
-    time
-    dir
+    os_icon                 # OFF - toggled for sentient
+    time                    # OFF - toggled for sentient
+    dir                     # OFF - toggled for sentient
     prompt_char             # prompt symbol
   )
 
@@ -64,7 +66,7 @@
     nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
     nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
     nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
-    # node_version          # node.js version
+    node_version          # node.js version
     # go_version            # go version (https://golang.org)
     # rust_version          # rustc version (https://www.rust-lang.org)
     # dotnet_version        # .NET version (https://dotnet.microsoft.com)
@@ -92,7 +94,7 @@
     ram                   # free RAM
     load                  # CPU load
     todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
-    time                    # current time
+    # time                    # current time
     battery
     # =========================[ Line #2 ]=========================
     newline
@@ -1098,8 +1100,8 @@
   # and https://github.com/romkatv/powerlevel10k/issues/316#issuecomment-551867287
   # first disable line 1 and line 2 right part then enable time and dir on line 2 left side
   # make sure they are enabled in POWERLEVEL9K_LEFT_PROMPT_ELEMENTS, otherwise show/hide has no effect
-  function p10k-on-pre-prompt() { p10k display '1|2/right'=show '2/left/time'=hide '2/left/dir'=hide }
-  function p10k-on-post-prompt() { p10k display '1|2/right'=hide '2/left/time'=show '2/left/dir'=show }
+  function p10k-on-pre-prompt() { p10k display '1|2/right'=show '2/left/time'=hide '2/left/dir'=hide '2/left/os_icon'=hide }
+  function p10k-on-post-prompt() { p10k display '1|2/right'=hide '2/left/time'=show '2/left/dir'=show '2/left/os_icon'=show }
 
   # User-defined prompt segments can be customized the same way as built-in segments.
   # typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=208
