@@ -1,18 +1,18 @@
-# /etc/systemd/system/lt-docker-app.service
+# /etc/systemd/system/bla-docker-app.service
 
 [Unit]
-Description=Lets Talk Docker Service
+Description=Bla Docker Service
 Requires=docker.service
 After=docker.service
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-WorkingDirectory=/home/ardent/LetsTalk/projects/devdocker
+WorkingDirectory=/home/tim/projects/devdocker
 ExecStart=/usr/bin/docker-compose up -d
 ExecStop=/usr/bin/docker-compose down
 TimeoutStartSec=0
-User=ardent
+User=tim
 
 [Install]
 WantedBy=multi-user.target
