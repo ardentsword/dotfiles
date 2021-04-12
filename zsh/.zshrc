@@ -130,7 +130,7 @@ autoload -U compinit && compinit
 
 # Go
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/snap/bin:$HOME/.composer/vendor/bin
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/snap/bin:$HOME/.composer/vendor/bin:$HOME/.symfony/bin
 export EDITOR="code --wait"
 
 # Kube
