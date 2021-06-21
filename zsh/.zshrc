@@ -65,7 +65,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -100,11 +100,11 @@ fi
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nano'
+else
+  export EDITOR='code --wait'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -121,17 +121,18 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="$HOME/LetsTalk/projects/devdocker/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
-
-# Autocomplete kubectx/kubens
-autoload -U compinit && compinit
+# Path additions
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=$PATH:/snap/bin
+export PATH=$PATH:$HOME/.composer/vendor/bin
 
 # Go
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/snap/bin:$HOME/.composer/vendor/bin
-export EDITOR="code --wait"
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+# Autocomplete kubectx/kubens
+autoload -U compinit && compinit
 
 # Kube
 #KUBECONFIG=""
