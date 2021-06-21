@@ -126,6 +126,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$PATH:/snap/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH=$PATH:$HOME/.symfony/bin
 
 # Go
 export GOPATH=$HOME/go
