@@ -67,10 +67,10 @@
     nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
     nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
     node_version          # node.js version
-    php_version
     # go_version            # go version (https://golang.org)
     # rust_version          # rustc version (https://www.rust-lang.org)
     # dotnet_version        # .NET version (https://dotnet.microsoft.com)
+    php_version
     # rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
     # rvm                     # ruby version from rvm (https://rvm.io)
     # fvm                     # flutter version management (https://github.com/leoafarias/fvm)
@@ -344,11 +344,11 @@
   #   typeset -g POWERLEVEL9K_DIR_WORK_ANCHOR_FOREGROUND=39
   #
   # typeset -g POWERLEVEL9K_DIR_CLASSES=()
-  # typeset -g POWERLEVEL9K_DIR_CLASSES=(
-  #   '~/LetsTalk(|/*)'  WORK     '(╯°□°）╯︵ ┻━┻'
-  #   '~(|/*)'       HOME     ''
-  #   '*'            DEFAULT  ''
-  # )
+   typeset -g POWERLEVEL9K_DIR_CLASSES=(
+     '~/projects(|/*)'  WORK     ''
+     '~(|/*)'       HOME     ''
+     '*'            DEFAULT  ''
+   )
 
   #####################################[ vcs: git status ]######################################
   # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
@@ -718,7 +718,7 @@
   # Show node version only when in a directory tree containing package.json.
   typeset -g POWERLEVEL9K_NODE_VERSION_PROJECT_ONLY=true
   # Custom icon.
-  # typeset -g POWERLEVEL9K_NODE_VERSION_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_NODE_VERSION_VISUAL_IDENTIFIER_EXPANSION=''
 
   #######################[ go_version: go version (https://golang.org) ]########################
   # Go version color.
@@ -743,6 +743,14 @@
   typeset -g POWERLEVEL9K_DOTNET_VERSION_PROJECT_ONLY=true
   # Custom icon.
   # typeset -g POWERLEVEL9K_DOTNET_VERSION_VISUAL_IDENTIFIER_EXPANSION='⭐'
+
+  #####################[ php_version: php version (https://www.php.net/) ]######################
+  # PHP version color.
+  typeset -g POWERLEVEL9K_PHP_VERSION_FOREGROUND=37
+  # Show PHP version only when in a PHP project subdirectory.
+  typeset -g POWERLEVEL9K_PHP_VERSION_PROJECT_ONLY=true
+  # Custom icon.
+  typeset -g POWERLEVEL9K_PHP_VERSION_VISUAL_IDENTIFIER_EXPANSION=''
 
   #############[ rbenv: ruby version from rbenv (https://github.com/rbenv/rbenv) ]##############
   # Rbenv color.
