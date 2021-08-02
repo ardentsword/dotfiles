@@ -345,9 +345,9 @@
   #
   # typeset -g POWERLEVEL9K_DIR_CLASSES=()
    typeset -g POWERLEVEL9K_DIR_CLASSES=(
-     '~/projects(|/*)'  WORK     ''
-     '~(|/*)'       HOME     ''
-     '*'            DEFAULT  ''
+     '~/projects(|/*)'  WORK     ' '
+     '~(|/*)'           HOME     ' '
+     '*'                DEFAULT  ' '
    )
 
   #####################################[ vcs: git status ]######################################

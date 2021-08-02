@@ -49,7 +49,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -75,7 +75,15 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-z composer cp extract zsh-autosuggestions)
+plugins=(git git-flow zsh-z composer cp extract zsh-autosuggestions)
+
+# git      - git aliases https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+# git-flow - git-flow aliases and autocomplete https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-flow
+# zsh-z    - f/z fast browsing
+# composer - composer aliases and completion
+# cp       - cpv alias that uses rsync
+# extract  - easy extraction tool for different archives
+# zsh-autosuggestions - gives auto suggestion for previous used commands 
 
 source $ZSH/oh-my-zsh.sh
 
@@ -148,14 +156,5 @@ autoload -U compinit && compinit
 #export KUBECONFIG
 #if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 
-#alias ltd='docker exec -it lt-dev /bin/bash'
-#alias ltdf='docker exec -it lt-dev-2004 /bin/bash'
-#alias lt-dd-f='docker exec -it lt-dev-2004 lt-dd'
-#alias lt-dd-cms='lt-dd project:execute -p mpm-cms -n -- '
-#alias lt-dd-web='lt-dd project:execute -p mpm-website -n -- '
-#alias lt-dd-w2='lt-dd project:execute -p wrqr2 -n -- '
-#alias fm='xinput set-prop 9 "libinput Scroll Method Enabled" 0, 0, 1 && xinput set-prop 9 "libinput Button Scrolling Button" 10'
+[ -f .aliases ] && source .aliases
 
-alias gcp='git cherry-pick'
-alias gdq='screen -d -m streamlink https://www.twitch.tv/gamesdonequick best -p mpv'
-alias f=z

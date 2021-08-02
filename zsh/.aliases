@@ -1,0 +1,14 @@
+#alias ltd='docker exec -it lt-dev /bin/bash'
+#alias ltdf='docker exec -it lt-dev-2004 /bin/bash'
+#alias lt-dd-f='docker exec -it lt-dev-2004 lt-dd'
+#alias lt-dd-cms='lt-dd project:execute -p mpm-cms -n -- '
+#alias lt-dd-web='lt-dd project:execute -p mpm-website -n -- '
+#alias lt-dd-w2='lt-dd project:execute -p wrqr2 -n -- '
+#alias fm='xinput set-prop 9 "libinput Scroll Method Enabled" 0, 0, 1 && xinput set-prop 9 "libinput Button Scrolling Button" 10'
+
+alias gcp='git cherry-pick'
+alias gs='git status'
+
+
+alias gdq='screen -d -m streamlink https://www.twitch.tv/gamesdonequick best -p mpv'
+alias f=z
