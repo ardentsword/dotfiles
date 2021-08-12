@@ -8,13 +8,13 @@ Note that there is also a [Cheatsheet specific to Markdown Here](./Markdown-Here
 [Lists](#lists)  
 [Links](#links)  
 [Images](#images)  
-[Code and Syntax Highlighting](#code)  
+[Code and Syntax Highlighting](#code-and-syntax-highlighting)  
 [Tables](#tables)  
 [Blockquotes](#blockquotes)  
-[Inline HTML](#html)  
-[Horizontal Rule](#hr)  
-[Line Breaks](#lines)
-[YouTube Videos](#videos)
+[Inline HTML](#inline-html)  
+[Horizontal Rule](#horizontal-rule)  
+[Line Breaks](#line-breaks)
+[YouTube Videos](#youtube-videos)
 
 ## Headers
 
@@ -210,8 +210,6 @@ print s
 No language indicated, so no syntax highlighting. 
 But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
 ```
-
-
 
 ```javascript
 var s = "JavaScript syntax highlighting";

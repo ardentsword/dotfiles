@@ -9,4 +9,4 @@
 
 ## Fun
 
-[Browser game sf2](https://github.com/joanmadrid/esirith)
+[Browser game (Symfony 2)](https://github.com/joanmadrid/esirith)
