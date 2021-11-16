@@ -12,3 +12,5 @@ alias gs='git status'
 
 alias gdq='screen -d -m streamlink https://www.twitch.tv/gamesdonequick best -p mpv'
 alias f=z
+
+alias fixtime='sudo hwclock --hctosys'
