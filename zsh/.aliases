@@ -14,3 +14,4 @@ alias gdq='screen -d -m streamlink https://www.twitch.tv/gamesdonequick best -p 
 alias f=z
 
 alias fixtime='sudo hwclock --hctosys'
+alias sc='./bin/console'
