@@ -15,3 +15,6 @@ alias f=z
 
 alias fixtime='sudo hwclock --hctosys'
 alias sc='./bin/console'
+
+alias scdsd='sc doctrine:schema:update --dump-sql'
+alias scdsf='sc doctrine:schema:update --force --dump-sql'
